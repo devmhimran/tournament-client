@@ -9,6 +9,7 @@ import AddTournament from './Component/AddTournament/AddTournament';
 import AllTournament from './Component/AllTournament/AllTournament';
 import SignIn from './Component/SignIn/SignIn';
 import SignUp from './Component/SignUp/SignUp';
+import RequireAuth from './Component/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path='dashboard' element={<Dashboard></Dashboard>}>
+        <Route path='dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}>
         <Route path='allusers' element={<AllUsers />}></Route>
         <Route path='addtournament' element={<AddTournament />}></Route>
         <Route path='alltournament' element={<AllTournament />}></Route>

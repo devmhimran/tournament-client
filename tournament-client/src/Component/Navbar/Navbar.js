@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    console.log(user)
     const logout = () => {
         signOut(auth);
     };

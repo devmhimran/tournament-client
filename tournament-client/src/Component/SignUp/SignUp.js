@@ -2,10 +2,11 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init'
-import { updateProfile } from 'firebase/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
-    const [createUserWithEmailAndPassword,user, loading,error,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword,user, loading,signOutError] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, error] = useUpdateProfile(auth);
     const navigate = useNavigate();
     const handleCreateUser = async (e) =>{
         e.preventDefault();
@@ -13,11 +14,15 @@ const SignUp = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         await createUserWithEmailAndPassword(email, password);
-        // await updateProfile({ displayName: name});
-        navigate('/')
-        console.log(name, email, password);
+        await updateProfile({ displayName: name});
+        // navigate('/')
+        
 
     }
+    if(user){
+          navigate('/dashboard')
+    }
+    console.log(user);
     return (
         <div className='container mx-auto'>
             <div className="card mt-20 mx-auto w-96 bg-base-100 shadow-xl">
