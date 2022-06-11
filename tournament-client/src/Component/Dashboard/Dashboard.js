@@ -13,7 +13,9 @@ const Dashboard = () => {
                 <div className="drawer-side border rounded-lg m-2">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                        <li><Link className='border-b' to='/dashboard/'>My Profile</Link></li>
+                        <li><Link className='border-b' to='/dashboard/allusers'>All Users</Link></li>
+                        <li><Link className='border-b' to='/dashboard/addtournament'>Add Tournament</Link></li>
+                        <li><Link className='border-b' to='/dashboard/alltournament'>All Tournament</Link></li>
                         {/* {
                             admin ?
                                 <>
