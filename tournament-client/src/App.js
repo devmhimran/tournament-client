@@ -7,6 +7,8 @@ import Home from './Component/Home/Home';
 import AllUsers from './Component/AllUsers/AllUsers';
 import AddTournament from './Component/AddTournament/AddTournament';
 import AllTournament from './Component/AllTournament/AllTournament';
+import SignIn from './Component/SignIn/SignIn';
+import SignUp from './Component/SignUp/SignUp';
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path='dashboard' element={<Dashboard></Dashboard>}>
         <Route path='allusers' element={<AllUsers />}></Route>
         <Route path='addtournament' element={<AddTournament />}></Route>
