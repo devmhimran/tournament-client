@@ -2,8 +2,8 @@ import React from 'react';
 
 const AllTournament = () => {
     return (
-        <div class="overflow-x-auto col-span-2">
-                <table class="table w-full">
+        <div className="overflow-x-auto col-span-2">
+                <table className="table w-full">
         
                     <thead>
                         <tr>
